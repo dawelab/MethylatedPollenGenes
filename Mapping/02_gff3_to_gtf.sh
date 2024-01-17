@@ -1,5 +1,12 @@
 cd /scratch/yz77862/pollen
+##For genes
+#ml Cufflinks
 
+#To make the variable for the gtf files
+gff=/scratch/yz77862/B73v5_genome/Zm-B73-REFERENCE-NAM-5.0_Zm00001eb.1.gff3
+sed 's/chr//g' ${gff} | gffread -T -o Zm-B73-REFERENCE-NAM-5.0_Zm00001eb.1.gtf
+
+##ForTEs
 #The TE data is downloaded from maizegdb B73v5 file
 #Make the TE avalible gtf file for mapping 
 gunzip Zm-B73-REFERENCE-NAM-5.0.TE.gff3.gz
