@@ -7,5 +7,5 @@ awk '$3=="CDS"' Zm-B73-REFERENCE-NAM-5.0_Zm00001eb.1.gff3 | cut -f1 -d ';' | sed
 gene_cds=${working_dir}/Zm-B73-REFERENCE-NAM-5.0_Zm00001eb.1.gene.bed
 #Make the TE bed file
 awk '{print $1,$4,$5,$3}' OFS="\t" Zm-B73-REFERENCE-NAM-5.0.TE.gff3 | grep -v "#" > Zm-B73-REFERENCE-NAM-5.0.TE.bed
-TE=${working_dir}
-bedtools intersect -wa -wb -a ${gene_cds} -b ${TE} | cut -f | uniq > gene_interectTE.bed
+TE=${working_dir}/Zm-B73-REFERENCE-NAM-5.0.TE.bed
+bedtools intersect -wa -wb -a ${gene_cds} -b ${TE} | cut -f4 | uniq > gene_interectTE.bed
