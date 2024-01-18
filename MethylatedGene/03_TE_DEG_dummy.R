@@ -9,3 +9,10 @@ B73_all <- read.csv("https://raw.githubusercontent.com/dawelab/Natural-methylati
 all_gene_set <- data.frame(gene=B73_all$gene)
 df_TE <- merge(all_gene_set,df_TE,by="gene",all.x=T)
 df_TE$TE[is.na(df_TE$TE)] <- "N"
+
+DEG <- read.csv("/Users/x/Desktop/Data/pollen/DEGAnalysisNov29.csv") 
+strongDEG <- DEG[DEG$class == "Strong DE",1] 
+names(strongDEG) <- "gene"
+df_strongDEG <- data.frame(gene=strongDEG,strongDEG = "Y")
+df_DEG <- merge(all_gene_set,df_strongDEG,by="gene",all.x=T)
+df_DEG$strongDEG[is.na(df_DEG$strongDEG)] <- "N"
