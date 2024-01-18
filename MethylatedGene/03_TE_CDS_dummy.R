@@ -1,13 +1,11 @@
 setwd()
-geneTE_list <- read.table("gene.intersect")
-geneID_TEinter <- geneID_TEinter$V4 %>% unique() 
+geneTE_list <- read.table("geneID_TEinter.txt")
+geneID_TEinter <- geneTE_list %>% as.data.frame()
 names(geneID_TEinter) <- "gene"
 TE_free_gene <- setdiff(all_geneset,geneID_TEinter) 
 df_TE <- data.frame(gene = geneID_TEinter,
                     TE = "Y")
-all_gene_set <- 
-
-setdiff <- 
-
-
-df_TE <- data.frame()
+B73_all <- read.csv("https://raw.githubusercontent.com/dawelab/Natural-methylation-epialleles-correlate-with-gene-expression-in-maize/main/Data/B73.all.csv")  %>% filter(pan != "pan_gene_50793")
+all_gene_set <- data.frame(gene=B73_all$gene)
+df_TE <- merge(all_gene_set,df_TE,by="gene",all.x=T)
+df_TE$TE[is.na(df_TE$TE)] <- "N"
