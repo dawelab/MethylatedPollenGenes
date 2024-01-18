@@ -1,3 +1,5 @@
+library(tidyverse)
+library(matrixStats)
 ####Get the dataset from github
 #Zm00001eb007510 is duplicated, remove one
 B73_all <- read.csv("https://raw.githubusercontent.com/dawelab/Natural-methylation-epialleles-correlate-with-gene-expression-in-maize/main/Data/B73.all.csv")  %>% filter(pan != "pan_gene_50793")
