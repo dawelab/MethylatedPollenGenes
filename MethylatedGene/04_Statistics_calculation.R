@@ -1,3 +1,3 @@
 #Merge the redefined epiallele matrix, TE(CDS), DEG dummy variable together.
 
-df <- merge()
+df <- merge(B73_all,)
