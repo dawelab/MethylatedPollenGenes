@@ -1,4 +1,5 @@
 setwd()
+library(tidyverse)
 geneTE_list <- read.table("geneID_TEinter.txt")
 geneID_TEinter <- geneTE_list %>% as.data.frame()
 names(geneID_TEinter) <- "gene"
