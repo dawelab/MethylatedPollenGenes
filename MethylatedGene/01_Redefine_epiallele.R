@@ -12,3 +12,9 @@ pollen_teM_gene <- B73_all  %>% filter(epiallele == "teM") %>% filter(anther >= 
   filter( embryo/anther < .1 & endosperm/anther < .1 & root/anther < .1 & shoot/anther < .1 &   base/anther < .1      & middle/anther < .1 & tip/anther < .1 &  ear/anther < .1   ) 
 
 #write.csv(pollen_teM_gene,file)
+
+##Filter the cores genes with expression tpm value greater than 10 in at least one tissue.
+
+B73_core_express <- B73_all %>% filter(rowSums(B73_all[,14:23] < 10) != 10 &
+                                class == "Core Gene" & 
+                                  cCG >=30 & cCHG >= 30) 
