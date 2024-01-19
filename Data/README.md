@@ -10,6 +10,6 @@ TE (CDS) Indicator: The column named "index TE(CDS)" specifies whether the CDS o
 
 If you are using R to process the data, you can load the it by
 ```
-df <- read.csv("https://raw.githubusercontent.com/dawelab/MethylatedPollenGenes/main/Data/df_RedefineEpailele.csv?token=GHSAT0AAAAAACMFLIBV6626YZVHUFEQ3QOGZNKT7RQ")
+df <- read.csv("https://raw.githubusercontent.com/dawelab/MethylatedPollenGenes/main/Data/df_RedefineEpailele.csv?token=GHSAT0AAAAAACMFLIBUHCBROGBSM7N7KK6AZNKUPWQ")
 ```
 
