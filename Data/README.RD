@@ -7,3 +7,9 @@ Epiallele Status: Our definition of epialleles differs from Zeng (2023). Genes w
 Index Length (CDS): The column named "index length(CDS)" indicates the cumulative length of coding sequences (CDS) for each gene.
 
 TE (CDS) Indicator: The column named "index TE(CDS)" specifies whether the CDS of a gene overlaps with Transposable Elements (TE) or not.
+
+If you are using R to process the data, you can load the it by
+```
+df <- read.csv("https://raw.githubusercontent.com/dawelab/MethylatedPollenGenes/main/Data/df_RedefineEpailele.csv?token=GHSAT0AAAAAACMFLIBV6626YZVHUFEQ3QOGZNKT7RQ")
+
+```
