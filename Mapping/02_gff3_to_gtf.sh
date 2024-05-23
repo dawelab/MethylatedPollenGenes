@@ -1,6 +1,6 @@
 cd /scratch/yz77862/pollen
 ##For genes
-#ml Cufflinks
+ml Cufflinks
 
 #To make the variable for the gtf files
 gff=/scratch/yz77862/B73v5_genome/Zm-B73-REFERENCE-NAM-5.0_Zm00001eb.1.gff3
