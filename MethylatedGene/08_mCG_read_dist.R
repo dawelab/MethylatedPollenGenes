@@ -74,7 +74,6 @@ df_methy$gene[df_methy$gene=="polygal"] <- "polygalacturonase"
 df_methy$tissue <- factor(df_methy$tissue,levels=c("pollen","endosperm","embryo","leaf","tassel"))
 df_methy$gene <- factor(df_methy$gene,levels=c("AGP-like","expansin","polygalacturonase","PME"))
 
-
 df_methy  %>% ggplot(aes(x= x, y=mCG,color=replicate)) +
   geom_point(size=0.5)  +
   facet_grid(gene~tissue,scales = "free_x") +
@@ -82,7 +81,8 @@ df_methy  %>% ggplot(aes(x= x, y=mCG,color=replicate)) +
   theme(legend.position = "None") +
   scale_y_continuous(breaks = c(0,0.5,1.0)) +
   theme(axis.text.x=element_blank(),
-        axis.ticks.x = element_blank())
+        axis.ticks.x = element_blank()) +
+  scale_color_manual(values=c("#999999", "#E69F00", "#56B4E9"))
   
 (tab1 <- table(df_methy$tissue,df_methy$gene))
 (tab2 <- table(df_methy$tissue[df_methy$mCG<=0.2],df_methy$gene[df_methy$mCG<=0.2]))
