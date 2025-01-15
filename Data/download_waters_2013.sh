@@ -1,7 +1,19 @@
+#!/bin/bash
+#SBATCH --job-name=SRA                   
+#SBATCH --partition=highmem_p                           
+#SBATCH --ntasks=1                                                  
+#SBATCH --cpus-per-task=30
+#SBATCH --mem=30gb                                                    
+#SBATCH --time=060:00:00                                          
+#SBATCH --output=download_sra.out                       
+#SBATCH --error=download_sra.err
 
+
+ml SRA-Toolkit/3.0.3-gompi-2022a
+cd /scratch/yz77862/Allim/data
 
 # Output directory for the downloaded data
-OUTPUT_DIR="/your/output/directory"
+OUTPUT_DIR=/scratch/yz77862/Allim/data
 
 # Create the output directory if it doesn't exist
 mkdir -p "$OUTPUT_DIR"
@@ -69,8 +81,5 @@ for ITEM in "${DATA_LIST[@]}"; do
     if [ -f "$OUTPUT_DIR/${SRA_ID}_2.fastq.gz" ]; then
         mv "$OUTPUT_DIR/${SRA_ID}_2.fastq.gz" "$OUTPUT_DIR/${SAMPLE_NAME}_2.fastq.gz"
     fi
-
-    echo "Completed $SRA_ID ($SAMPLE_NAME)."
 done
 
-echo "All downloads and conversions are complete!"
