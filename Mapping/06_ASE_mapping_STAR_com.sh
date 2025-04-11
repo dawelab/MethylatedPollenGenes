@@ -1,5 +1,3 @@
-
-
 list=/scratch/yz77862/Allim/B73v5_Ki11/list
 while read INPUT; do
 
@@ -20,8 +18,8 @@ OUT=/scratch/yz77862/Allim/gene_guide/shell/${INPUT}_com.sh
     echo " "  >> ${OUT}
     echo "thread=18"  >> ${OUT}  
     echo "index=/scratch/yz77862/Allim/reference/B73v5_Ki11/STAR"  >> ${OUT}  
-    echo "read1=/scratch/yz77862/Allim/B73v5_Ki11/${INPUT}_1.fastq.gz"  >> ${OUT}  
-    echo "read2=/scratch/yz77862/Allim/B73v5_Ki11/${INPUT}_2.fastq.gz"  >> ${OUT}  
+    echo "read1=/scratch/yz77862/Allim/B73v5_Ki11/trim/${INPUT}_1_val_1.fq.gz"  >> ${OUT}  
+    echo "read2=/scratch/yz77862/Allim/B73v5_Ki11/trim/${INPUT}_2_val_2.fq.gz"  >> ${OUT}  
     echo " "  >> ${OUT}  
     echo "STAR \\"  >> ${OUT}    
     echo "--runMode alignReads \\"  >> ${OUT}  
@@ -52,5 +50,4 @@ OUT=/scratch/yz77862/Allim/gene_guide/shell/${INPUT}_com.sh
     echo "--outFilterScoreMin 50 \\" >> ${OUT}  
     echo "--outFilterMultimapNmax 10000 \\" >> ${OUT}  
     echo "--outWigType bedGraph read1_5p"  >> ${OUT}
-    sbatch ${OUT}
 done < <(cut -f1,2 ${list} | grep -v 'skip' | sort -u)
