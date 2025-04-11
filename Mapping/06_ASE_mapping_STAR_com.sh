@@ -8,8 +8,8 @@ OUT=/scratch/yz77862/Allim/gene_guide/shell/${INPUT}_com.sh
     echo "#SBATCH --nodes=1"   >> ${OUT}                  
     echo "#SBATCH --ntasks=1"   >> ${OUT}              
     echo "#SBATCH --cpus-per-task=18"   >> ${OUT}          
-    echo "#SBATCH --mem=80G"   >> ${OUT}                  
-    echo "#SBATCH --time=010:00:00"   >> ${OUT}             
+    echo "#SBATCH --mem=200G"   >> ${OUT}                  
+    echo "#SBATCH --time=018:00:00"   >> ${OUT}             
     echo "#SBATCH --output=${INPUT}_com_bam.out"   >> ${OUT}         
     echo "#SBATCH --error=${INPUT}_com_bam.err"   >> ${OUT}         
     echo " "  >> ${OUT}  
