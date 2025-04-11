@@ -21,17 +21,18 @@ OUT=/scratch/yz77862/Allim/gene_guide/shell/${INPUT}_Ki11.sh
     echo "read1=/scratch/yz77862/Allim/B73v5_Ki11/trim/${INPUT}_1_val_1.fq.gz"  >> ${OUT}  
     echo "read2=/scratch/yz77862/Allim/B73v5_Ki11/trim/${INPUT}_2_val_2.fq.gz"  >> ${OUT}  
     echo " "  >> ${OUT}  
-    echo "STAR \\"  >> ${OUT}    
-    echo "--runMode alignReads \\"  >> ${OUT}  
-    echo "--genomeDir \${index}  \\"  >> ${OUT}  
-    echo "--twopassMode Basic  \\"  >> ${OUT}  
-    echo "​--runThreadN \$thread \\"  >> ${OUT}  
-    echo "--readFilesIn \${read1} \${read2} \\"  >> ${OUT}  
-    echo "--outSAMtype None \\"  >> "${OUT}"   # optional: you can change to BAM Unsorted if you want output
-    echo "--outFileNamePrefix ${INPUT} \\"  >> ${OUT}  
-    echo "--outFilterScoreMin 50 \\" >> ${OUT}  
-    echo "--outFilterMultimapNmax 10000 \\" >> ${OUT}  
-    echo "--readFilesCommand zcat" >> ${OUT}  
+    echo "STAR \\"  >> "${OUT}"
+    echo "--runMode alignReads \\"  >> "${OUT}"
+    echo "--genomeDir \${index} \\"  >> "${OUT}"
+    echo "--twopassMode Basic \\"  >> "${OUT}"
+    echo "--runThreadN \${thread} \\"  >> "${OUT}"
+    echo "--readFilesCommand zcat \\"  >> "${OUT}"
+    echo "--readFilesIn \${read1} \${read2} \\"  >> "${OUT}"
+    echo "--outSAMtype None \\"  >> "${OUT}"   # If you want no output SAM, otherwise set to BAM Unsorted
+    echo "--outFileNamePrefix ${INPUT} \\"  >> "${OUT}"
+    echo "--outFilterScoreMin 50 \\" >> "${OUT}"
+    echo "--outFilterMultimapNmax 10000" >> "${OUT}"
+
     echo " "  >> ${OUT}
     echo "cd /scratch/yz77862/Allim/gene_guide/Kill/round2"  >> ${OUT}
     echo " " >> ${OUT}
