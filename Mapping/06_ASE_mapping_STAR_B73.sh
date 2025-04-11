@@ -10,8 +10,8 @@ OUT=/scratch/yz77862/Allim/gene_guide/shell/${INPUT}_B73.sh
     echo "#SBATCH --cpus-per-task=18"   >> ${OUT}          
     echo "#SBATCH --mem=200G"   >> ${OUT}                  
     echo "#SBATCH --time=018:00:00"   >> ${OUT}             
-    echo "#SBATCH --output=${INPUT}_com_bam.out"   >> ${OUT}         
-    echo "#SBATCH --error=${INPUT}_com_bam.err"   >> ${OUT}         
+    echo "#SBATCH --output=${INPUT}_B73_bam.out"   >> ${OUT}         
+    echo "#SBATCH --error=${INPUT}_B73_bam.err"   >> ${OUT}         
     echo " "  >> ${OUT}  
     echo "ml STAR/2.7.10b-GCC-11.3.0" >> ${OUT}  
     echo "cd /scratch/yz77862/Allim/gene_guide/B73/round1" >> ${OUT}
