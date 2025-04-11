@@ -34,6 +34,7 @@ OUT=/scratch/yz77862/Allim/gene_guide/shell/${INPUT}_B73.sh
     echo "--outFilterMultimapNmax 10000" >> "${OUT}"
     echo " "  >> ${OUT}
     echo "cd /scratch/yz77862/Allim/gene_guide/B73/round2"  >> ${OUT}
+    
     echo " " >> ${OUT}
  # 2nd STAR run
     echo "SJ=/scratch/yz77862/Allim/gene_guide/B73/round1/${INPUT}_STARpass1/SJ.out.tab"  >> "${OUT}"
