@@ -33,23 +33,22 @@ OUT=/scratch/yz77862/Allim/gene_guide/shell/${INPUT}_Ki11.sh
     echo "--outFilterScoreMin 50 \\" >> "${OUT}"
     echo "--outFilterMultimapNmax 10000" >> "${OUT}"
 
-    echo " "  >> ${OUT}
-    echo "cd /scratch/yz77862/Allim/gene_guide/Kill/round2"  >> ${OUT}
-    echo " " >> ${OUT}
-    echo "SJ=/scratch/yz77862/Allim/gene_guide/Kill/round1/${INPUT}_STARpass1/SJ.out.tab"  >> ${OUT}
-    echo "STAR \\"  >> ${OUT}
-    echo "--genomeDir \${index} \\"  >> ${OUT}
-    echo "--runThreadN \${thread} \\"  >> ${OUT}
-    echo "--sjdbFileChrStartEnd \${SJ} \\"  >> ${OUT}
-    echo "--runMode alignReads \\"  >> ${OUT}
-    echo "--readFilesIn \${read1} \${read2} \\"  >> ${OUT}
-    echo "--outSAMattributes All \\"  >> ${OUT}
-    echo "--outSAMmapqUnique 10 \\"  >> ${OUT}
-    echo "--outFilterMismatchNmax 3 \\"  >> ${OUT}
-    echo "--outFileNamePrefix ${INPUT}_round-2 \\"  >> ${OUT}
-    echo "--outBAMsortingThreadN 4 \\"  >> ${OUT}
-    echo "--outSAMtype BAM SortedByCoordinate \\"  >> ${OUT}
-    echo "--outFilterScoreMin 50 \\" >> ${OUT}  
-    echo "--outFilterMultimapNmax 10000 \\" >> ${OUT}  
-    echo "--outWigType bedGraph read1_5p"  >> ${OUT}
+ # 2nd STAR run
+    echo "SJ=/scratch/yz77862/Allim/gene_guide/round1/${INPUT}_STARpass1/SJ.out.tab"  >> "${OUT}"
+    echo "STAR \\"  >> "${OUT}"
+    echo "--genomeDir \${index} \\"  >> "${OUT}"
+    echo "--runThreadN \${thread} \\"  >> "${OUT}"
+    echo "--readFilesCommand zcat \\"  >> "${OUT}"
+    echo "--sjdbFileChrStartEnd \${SJ} \\"  >> "${OUT}"
+    echo "--runMode alignReads \\"  >> "${OUT}"
+    echo "--readFilesIn \${read1} \${read2} \\"  >> "${OUT}"
+    echo "--outSAMattributes All \\"  >> "${OUT}"
+    echo "--outSAMmapqUnique 10 \\"  >> "${OUT}"
+    echo "--outFilterMismatchNmax 3 \\"  >> "${OUT}"
+    echo "--outFileNamePrefix ${INPUT}_round-2 \\"  >> "${OUT}"
+    echo "--outBAMsortingThreadN 4 \\"  >> "${OUT}"
+    echo "--outSAMtype BAM SortedByCoordinate \\"  >> "${OUT}"
+    echo "--outFilterScoreMin 50 \\" >> "${OUT}"
+    echo "--outFilterMultimapNmax 10000 \\" >> "${OUT}"
+    echo "--outWigType bedGraph read1_5p"  >> "${OUT}"
 done < <(cut -f1,2 ${list} | grep -v 'skip' | sort -u)
