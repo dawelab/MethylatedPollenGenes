@@ -17,7 +17,7 @@ OUT=/scratch/yz77862/Allim/gene_guide/shell/${INPUT}_B73.sh
     echo "cd /scratch/yz77862/Allim/gene_guide/B73/round1" >> ${OUT}
     echo " "  >> ${OUT}
     echo "thread=18"  >> ${OUT}  
-    echo "index=/scratch/yz77862/Allim/reference/B73v5_Ki11/STAR"  >> ${OUT}  
+    echo "index=/scratch/yz77862/Allim/reference/B73/STAR"  >> ${OUT}  
     echo "read1=/scratch/yz77862/Allim/B73v5_Ki11/trim/${INPUT}_1_val_1.fq.gz"  >> ${OUT}  
     echo "read2=/scratch/yz77862/Allim/B73v5_Ki11/trim/${INPUT}_2_val_2.fq.gz"  >> ${OUT}  
     echo " "  >> ${OUT}  
