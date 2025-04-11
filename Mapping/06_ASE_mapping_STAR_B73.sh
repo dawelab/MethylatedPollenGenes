@@ -36,7 +36,7 @@ OUT=/scratch/yz77862/Allim/gene_guide/shell/${INPUT}_B73.sh
     echo "cd /scratch/yz77862/Allim/gene_guide/B73/round2"  >> ${OUT}
     echo " " >> ${OUT}
  # 2nd STAR run
-    echo "SJ=/scratch/yz77862/Allim/gene_guide/round1/${INPUT}_STARpass1/SJ.out.tab"  >> "${OUT}"
+    echo "SJ=/scratch/yz77862/Allim/gene_guide/B73/round1/${INPUT}_STARpass1/SJ.out.tab"  >> "${OUT}"
     echo "STAR \\"  >> "${OUT}"
     echo "--genomeDir \${index} \\"  >> "${OUT}"
     echo "--runThreadN \${thread} \\"  >> "${OUT}"
