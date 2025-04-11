@@ -32,9 +32,9 @@ OUT=/scratch/yz77862/Allim/gene_guide/shell/${INPUT}_Ki11.sh
     echo "--outFileNamePrefix ${INPUT} \\"  >> "${OUT}"
     echo "--outFilterScoreMin 50 \\" >> "${OUT}"
     echo "--outFilterMultimapNmax 10000" >> "${OUT}"
-
  # 2nd STAR run
-    echo "SJ=/scratch/yz77862/Allim/gene_guide/round1/${INPUT}_STARpass1/SJ.out.tab"  >> "${OUT}"
+    echo "cd /scratch/yz77862/Allim/gene_guide/Kill/round2" >> ${OUT}
+    echo "SJ=/scratch/yz77862/Allim/gene_guide/Kill/round1/${INPUT}_STARpass1/SJ.out.tab"  >> "${OUT}"
     echo "STAR \\"  >> "${OUT}"
     echo "--genomeDir \${index} \\"  >> "${OUT}"
     echo "--runThreadN \${thread} \\"  >> "${OUT}"
