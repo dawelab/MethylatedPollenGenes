@@ -2,7 +2,7 @@ list=/scratch/yz77862/Allim/B73v5_Ki11/list
 
 while read INPUT; do
 
-    OUT=/scratch/yz77862/Allim/gene_guide/shell/${INPUT}_B73_VCF.sh
+    OUT=/scratch/yz77862/Allim/gene_guide/shell/${INPUT}_Ki11_VCF.sh
 
     echo '#!/bin/bash'  > "${OUT}"
     echo "#SBATCH --job-name=${INPUT}_mapping"   >> "${OUT}"
