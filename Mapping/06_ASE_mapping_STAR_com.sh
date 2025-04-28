@@ -32,7 +32,7 @@ while read INPUT; do
     echo "--outSAMtype BAM SortedByCoordinate \\" >> "${OUT}"
     echo "--outSAMunmapped Within \\" >> "${OUT}"
     echo "--outSAMattributes Standard \\" >> "${OUT}"
-    echo "--outFileNamePrefix \${INPUT}" >> "${OUT}"
+    echo "--outFileNamePrefix ${INPUT}" >> "${OUT}"
 
 done < <(cut -f1,2 "${list}" | grep -v 'skip' | sort -u)
 
