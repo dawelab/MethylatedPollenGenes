@@ -14,7 +14,7 @@ OUT=/scratch/yz77862/Allim/gene_guide/shell/${INPUT}_Ki11.sh
     echo "#SBATCH --error=${INPUT}_Ki11_bam.err"   >> ${OUT}         
     echo " "  >> ${OUT}  
     echo "ml STAR/2.7.10b-GCC-11.3.0" >> ${OUT}  
-    echo "cd /scratch/yz77862/Allim/gene_guide/Kill/round1" >> ${OUT}
+    echo "cd /scratch/yz77862/Allim/gene_guide/Kill/output_default" >> ${OUT}
     echo " "  >> ${OUT}
     echo "thread=18"  >> ${OUT}  
     echo "index=/scratch/yz77862/Allim/reference/Ki11/STAR"  >> ${OUT}  
@@ -28,5 +28,5 @@ OUT=/scratch/yz77862/Allim/gene_guide/shell/${INPUT}_Ki11.sh
     echo "--outSAMtype BAM SortedByCoordinate \\" >> "${OUT}"
     echo "--outSAMunmapped Within \\" >> "${OUT}"
     echo "--outSAMattributes Standard \\" >> "${OUT}"
-    echo "--outFileNamePrefix \${INPUT}" >> "${OUT}"
+    echo "--outFileNamePrefix ${INPUT}" >> "${OUT}"
 done < <(cut -f1,2 ${list} | grep -v 'skip' | sort -u)
