@@ -12,3 +12,8 @@
 ml SAMtools
 cd /scratch/yz77862/Allim/gene_guide/output_default
 
+for i in *bam;do
+samtools view -q 20 -o /scratch/yz77862/Allim/gene_guide/output_default/Q20/${i}_q20.bam ${i}
+
+cd /scratch/yz77862/Allim/gene_guide/output_default/Q20
+/home/yz77862/apps/subread-1.6.0-Linux-x86_64/bin/featureCounts -a ${gtf} -o B73_KI11_repci_exon_count.counts *bam -M -f -t exon -g gene_id 
