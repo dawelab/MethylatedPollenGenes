@@ -4,7 +4,7 @@ while read INPUT; do
 OUT=/scratch/yz77862/Allim/gene_guide/shell/${INPUT}_B73.sh
     echo '#!/bin/bash'  >> ${OUT} 
     echo "#SBATCH --job-name=${INPUT}_mapping"   >> ${OUT}            
-    echo "#SBATCH --partition=batch"   >> ${OUT} 
+    echo "#SBATCH --partition=highmem_p"   >> ${OUT} 
     echo "#SBATCH --nodes=1"   >> ${OUT}                  
     echo "#SBATCH --ntasks=1"   >> ${OUT}              
     echo "#SBATCH --cpus-per-task=18"   >> ${OUT}          
