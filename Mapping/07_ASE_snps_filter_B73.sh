@@ -18,7 +18,7 @@ while read INPUT; do
 
     echo "ml BCFtools/1.6-foss-2022a" >> "${OUT}"
     echo "ml GATK/4.2.0.0-GCCcore-10.2.0" >> "${OUT}"  # Use 'ml' not 'module spider' for loading
-    echo "BAM=/scratch/yz77862/Allim/gene_guide/B73/round2/${INPUT}_round-2Aligned.sortedByCoord.out.bam"  >> "${OUT}"
+    echo "BAM=/scratch/yz77862/Allim/gene_guide/B73/output_default/${INPUT}Aligned.sortedByCoord.out.bam"  >> "${OUT}"
     echo "ref=/scratch/yz77862/Allim/reference/B73/Zm-B73-REFERENCE-NAM-5.0.fa"  >> "${OUT}"
     echo "cd /scratch/yz77862/Allim/gene_guide/B73/VCF" >> "${OUT}"
 
